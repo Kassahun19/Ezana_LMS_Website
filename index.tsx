@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { createRoot } from "react-dom/client";
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 /* 
 ================================================================================
@@ -1810,10 +1810,7 @@ const Features = () => (
 );
 
 const About = () => {
-  const [ceoImage, setCeoImage] = useState(DEFAULT_CEO_IMAGE);
-  useEffect(() => {
-    DB.getSettings().then((s) => setCeoImage(s.ceoImage || DEFAULT_CEO_IMAGE));
-  }, []);
+  const ceoImage = DEFAULT_CEO_IMAGE; // Always use Kassahun.jpg for CEO image
   return (
     <section
       id="about"
